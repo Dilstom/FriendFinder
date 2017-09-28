@@ -13,59 +13,51 @@ module.exports = function (app) {
   });
 
   app.post("/api/friends", function (req, res) {
-    var body = req.body;
-
-    var bestMatch = getDifferences(friends, body);
-
+    var newUser = req.body;
+    var bestMatch = findBestMatch(friends, newUser);
+    friends.push(newUser);
     res.json(bestMatch);
   });
 
-  // function getDifferences(userData, newUser) {
-  //   var diffTotals = []
-  //   for (var i = 0; i < userData.length; i++) {
-  //     var totalDiff = 0
+  function findBestMatch(userData, newUser) {
+    var diffTotals = []
 
-  //     for (var j = 0; j < userData[i].scores.length; j++) {
-  //       var score1 = parseInt(userData[i].scores[j])
-  //       var userScore = parseInt(newUser.scores[j])
+    for (var i = 0; i < userData.length; i++) {
+      var totalDiff = 0
 
-  //       if (!(score1 === userScore)) {
-  //         totalDiff += Math.abs(score1 - userScore)
-  //         console.log(totalDiff);
-  //       }
-  //     }
-  //     var friend = {
-  //       name: userData[i].name,
-  //       photo: userData[i].photo,
-  //       total: totalDiff
-  //     };
+      for (var j = 0; j < userData[i].scores.length; j++) {
+        var score1 = parseInt(userData[i].scores[j])
+        var userScore = parseInt(newUser.scores[j])
 
-  //     diffTotals.push(friend)
-  //   }
-  //   return diffTotals
-  // }
+        if (!(score1 === userScore)) {
+          totalDiff += Math.abs(score1 - userScore)
+        }
+      }
+
+      var friend = {
+        name: userData[i].name,
+        photo: userData[i].photo,
+        total: totalDiff
+      };
+
+      diffTotals.push(friend)
+    }
+
+    var newBestFriend = diffTotals.reduce( function(bestMatch, friend, index){
+      if (index === 0) { bestMatch = friend }
+      if (friend.total < bestMatch.total) {
+        bestMatch = friend
+      }
+      return bestMatch
+    }, {} )
+
+    return newBestFriend
+  }
 
 
-  // Check to find users best friend match 
-
-
-  //check scores of posted user 
-  //versus the score of all the other users 
-
-  //keep track of current score 
-
-  //if current score less then new score
-
-  //change current score to new score
-
-  //if nothing lower then current score 
-
-  //show that current score user to the client
-
-  // How to persist new verisions of friends.
-//   friends.push(body);
-//   res.json(friends);
-// });
+  // userData.push(newUser);
+  // res.json(userData);
+};
 
 
 // clear out the form
@@ -74,4 +66,3 @@ module.exports = function (app) {
 //   friend = [];
 //   console.log(friend);
 // })
-}

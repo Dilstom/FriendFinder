@@ -153,7 +153,7 @@
           // Here we grab the form elements      
       return {
             name: $("#usr").val().trim(),
-            photoLink: $("#linkPhoto").val().trim(),
+            photo: $("#linkPhoto").val().trim(),
             scores: answerValues,
           };
     }
@@ -167,18 +167,13 @@
           // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
             console.log('NEw USER ::', newUser)
           $.post("/api/friends", newUser,
-            function(data) {
-              // console.log('New user submission SUCCESS!')
-              console.log(data)
-
-              var differences = getDifferences(data, newUser)
-
-              console.log('diffs', differences)
-
-              // find user with lowest difference
+            function(bestMatch) {
+              console.log("NEW BEST FRIEND!! :: ", bestMatch)
               // display user name on modal
               //==============================
-                 
+                // display on modal bestMatch.name
+                // "Only had a difference of {bestMatch.total} points in their score!"
+                
               // Clear the form when submitting
               $("#usr").val("");
               $("#linkPhoto").val("");
@@ -187,29 +182,6 @@
     
         });
   
-  function getDifferences(userData, newUser) {
-    var diffTotals = []
-    for (var i=0; i < userData.length; i++) {
-      var totalDiff = 0
-
-      for (var j=0; j < userData[i].scores.length; j++) {
-        var score1 = parseInt(userData[i].scores[j])
-        var userScore = parseInt(newUser.scores[j])
-
-        if ( !( score1 === userScore)) {
-          totalDiff += Math.abs(score1 - userScore)
-        }
-      }
-      var friend = {
-        name: userData[i].name,
-        total: totalDiff,
-      }
-
-      diffTotals.push(friend)
-    }
-    return diffTotals
-  }  
-
   function getAnswerValues() {
       var answerValues = []
 
