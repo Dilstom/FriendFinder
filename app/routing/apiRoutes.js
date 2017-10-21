@@ -54,15 +54,6 @@ module.exports = function (app) {
     return newBestFriend
   }
 
-
-  // userData.push(newUser);
-  // res.json(userData);
 };
 
 
-// clear out the form
-// app.post("/api/clear", function(){
-//   //empty out the arrays of data
-//   friend = [];
-//   console.log(friend);
-// })

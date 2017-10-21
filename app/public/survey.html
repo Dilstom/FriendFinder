@@ -14,15 +14,7 @@
 	<!-- Chosen -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<style>
-  /* #insertPic {
-    margin: auto;
-    display: block;
-    width: 10%;
-    max-width: 50px;
-}; */
-</style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
   <div class="container">
@@ -199,20 +191,16 @@
           $.post("/api/friends", newUser,
             function(bestMatch) {
               console.log("NEW BEST FRIEND!! :: ", bestMatch)
-              $("#insertPic").append("<img src=" + "'" + bestMatch.photo + "'" + ">")
-              document.getElementsByTagName("img").className = "imageClass";
-              $("#insertName").append(bestMatch.name);
-              // $("#insertPic").append(bestMatch.photo);
-
-              // display user name on modal
-              //==============================
                 // display on modal bestMatch.name
                 // "Only had a difference of {bestMatch.total} points in their score!"
+              $("#insertPic").append("<img src=" + "'" + bestMatch.photo + "'" + ">")// $("#insertPic").append(bestMatch.photo);
+              document.getElementsByTagName("img").className = "imageClass";
+              $("#insertName").append(bestMatch.name);   // display user name on modal
                 
               // Clear the form when submitting
               $("#usr").val("");
               $("#linkPhoto").val("");
-            
+       
             });
     
         });
