@@ -1,16 +1,10 @@
 {
-  "name": "friend",
+  "name": "friends",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.15.4",
-    "path": "^0.12.7"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/Dilstom/FriendFinder/issues"
   },
-  "homepage": "https://github.com/Dilstom/FriendFinder#readme"
+  "homepage": "https://github.com/Dilstom/FriendFinder#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {},
+  "description": ""
 }

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend Finder</title>
+  	<!-- Latest compiled and minified CSS & JS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<!-- Font Awesome Glyphicons -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+	<!-- Chosen -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+  /* #insertPic {
+    margin: auto;
+    display: block;
+    width: 10%;
+    max-width: 50px;
+}; */
+</style>
+</head>
+<body>
+  <div class="container">
+  <h1>Survey Questions</h1>
+
+  <ln></ln>
+  <h3 style="font-size: bold">About You</h3>
+
+  <div class="form-group">
+    <label for="usr">Name (Required)</label>
+    <input type="text" class="form-control" id="usr">
+  </div>
+  <div class="form-group">
+  <label for="linkPhoto">Link to Photo Image (Required)</label>
+    <input type="text" class="form-control" id="linkPhoto">
+  </div>
+      
+      
+
+    <form>
+      <div class="form-group">
+      <h2>Question 1</h2>
+        <label for="sel1" style="font-size: 1.3em">Your mind is always buzzing with unexplored ideas and plans.</label> <br>
+        <select class="form-control" id="sel1" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 2</h2>
+        <label for="sel1" style="font-size: 1.3em">Generally speaking, you rely more on your experience than your imagination.</label> <br>
+        <select class="form-control" id="sel2" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 3</h2>
+        <label for="sel1" style="font-size: 1.3em">You find it easy to stay relaxed and focused even when there is some pressure.</label> <br>
+        <select class="form-control" id="sel3" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 4</h2>
+        <label for="sel1" style="font-size: 1.3em">You rarely do something just out of sheer curiosity.</label> <br>
+        <select class="form-control" id="sel4" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 5</h2>
+        <label for="sel1" style="font-size: 1.3em">People can rarely upset you.</label> <br>
+        <select class="form-control" id="sel5" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 6</h2>
+        <label for="sel1" style="font-size: 1.3em">It is often difficult for you to relate to other people’s feelings.</label> <br>
+        <select class="form-control" id="sel6" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 7</h2>
+        <label for="sel1" style="font-size: 1.3em">In a discussion, truth should be more important than people’s sensitivities.</label> <br>
+        <select class="form-control" id="sel7" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 8</h2>
+        <label for="sel1" style="font-size: 1.3em">You rarely get carried away by fantasies and ideas.</label> <br>
+        <select class="form-control" id="sel8" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 9</h2>
+        <label for="sel1" style="font-size: 1.3em">You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</label> <br>
+        <select class="form-control" id="sel9" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+            <h2>Question 10</h2>
+        <label for="sel1" style="font-size: 1.3em">You feel more energetic after spending time with a group of people.</label> <br>
+        <select class="form-control" id="sel10" style="width: 15%">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+        <br>
+        <button type="submit" style="width:100%" class="btn btn-primary submit" data-toggle="modal" data-target="#myModal">Submit</button><br><br>
+      </div>
+    </form>
+  </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Your New Best Friend is:</h4>
+          </div>
+          <div class="modal-body">
+            <p id="insertName"></p>
+            <div id="insertPic" class="modal-image"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    <!-- --end of Modal--- -->
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/friend">GitHub Repo</a></p>
+      </div>
+    </footer>
+
+  <script type="text/javascript">
+    
+    function makeUser(answerValues) {
+          // Here we grab the form elements      
+      return {
+            name: $("#usr").val().trim(),
+            photo: $("#linkPhoto").val().trim(),
+            scores: answerValues,
+          };
+    }
+    
+        $(".submit").on("click", function(event) {
+          event.preventDefault();
+    
+          var newUser = makeUser(getAnswerValues())
+
+          // This line is the magic. It"s very similar to the standard ajax function we used.
+          // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+            console.log('NEw USER ::', newUser)
+          $.post("/api/friends", newUser,
+            function(bestMatch) {
+              console.log("NEW BEST FRIEND!! :: ", bestMatch)
+              $("#insertPic").append("<img src=" + "'" + bestMatch.photo + "'" + ">")
+              document.getElementsByTagName("img").className = "imageClass";
+              $("#insertName").append(bestMatch.name);
+              // $("#insertPic").append(bestMatch.photo);
+
+              // display user name on modal
+              //==============================
+                // display on modal bestMatch.name
+                // "Only had a difference of {bestMatch.total} points in their score!"
+                
+              // Clear the form when submitting
+              $("#usr").val("");
+              $("#linkPhoto").val("");
+            
+            });
+    
+        });
+  
+  function getAnswerValues() {
+      var answerValues = []
+
+          for (var i=1; i <= 10; i++) {
+            var id = '#sel'+ i
+            answerValues.push(
+              parseInt($(id)[0].value)
+            )
+          }
+      console.log("ANSWER VALUES -- ", answerValues)
+
+      // res.json(_.sortn)
+      return answerValues
+    }
+    
+    </script>
+</body>
+</html>
+
